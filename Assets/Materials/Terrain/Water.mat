@@ -14,7 +14,7 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -68,7 +68,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondaryNormal:
-        m_Texture: {fileID: 2800000, guid: 30ac3a9d56cc99a469eb70bc61d5ad0b, type: 3}
+        m_Texture: {fileID: 2800000, guid: ff651b1c4933fff4aa8afb1f7095f176, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
@@ -107,6 +107,10 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _Minimum_Normal_Strength: 0.3
+    - _Noise_Scale: 10
+    - _Noise_Speed: 100
+    - _Normal_Strength: 1
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -119,6 +123,9 @@ Material:
     - _SrcBlendAlpha: 1
     - _Strength: 0.37
     - _Surface: 0
+    - _Wave_Detail: 10
+    - _Wave_Severity: 0.2
+    - _Wave_Speed: 50
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -126,9 +133,12 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Deep_Water_Color: {r: 0.054901965, g: 0.31764707, b: 0.5882353, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Noise_Tiling: {r: 3, g: 3, b: 0, a: 0}
+    - _Normal_Tiling: {r: 2000, g: 2000, b: 0, a: 0}
     - _Shallow_Water_Color: {r: 0.054901965, g: 0.5411765, b: 0.8588236, a: 0.31764707}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
-    - _Tiling: {r: 700, g: 700, b: 0, a: 0}
+    - _Tiling: {r: 1200, g: 1200, b: 0, a: 0}
+    - _Wave_Tiling: {r: 3, g: 3, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5435742421935680722
 MonoBehaviour:

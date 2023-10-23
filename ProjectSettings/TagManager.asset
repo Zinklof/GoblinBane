@@ -3,15 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Spawnpoint
+  - CoastalPoint
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Doesn't Render
   - Water
   - UI
-  - 
+  - SpawnPoints
   - 
   - 
   - 
