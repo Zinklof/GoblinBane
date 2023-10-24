@@ -61,63 +61,63 @@ public class WaveManager : MonoBehaviour
             goblinBeserkerOdds = 0;
             goblinCheiftanOdds = 0;
         }
-        if (wave <= 4)
+        else if(wave <= 4)
         {
             goblinGruntOdds = 75;
             goblinArcherOdds = 25;
             goblinBeserkerOdds = 0;
             goblinCheiftanOdds = 0;
         }
-        if (wave <= 6)
+        else if(wave <= 6)
         {
             goblinGruntOdds = 55;
             goblinArcherOdds = 35;
             goblinBeserkerOdds = 10;
             goblinCheiftanOdds = 0;
         }
-        if (wave <= 10)
+        else if(wave <= 10)
         {
             goblinGruntOdds = 30;
             goblinArcherOdds = 30;
             goblinBeserkerOdds = 20;
             goblinCheiftanOdds = 20;
         }
-        if (wave <= 20)
+        else if(wave <= 20)
         {
             goblinGruntOdds = 20;
             goblinArcherOdds = 30;
             goblinBeserkerOdds = 25;
             goblinCheiftanOdds = 25;
         }
-        if (wave <= 30)
+        else if(wave <= 30)
         {
             goblinGruntOdds = 18;
             goblinArcherOdds = 27;
             goblinBeserkerOdds = 30;
             goblinCheiftanOdds = 25;
         }
-        if (wave <= 45)
+        else if(wave <= 45)
         {
             goblinGruntOdds = 12;
             goblinArcherOdds = 23;
             goblinBeserkerOdds = 40;
             goblinCheiftanOdds = 25;
         }
-        if (wave <= 60)
+        else if(wave <= 60)
         {
             goblinGruntOdds = 10;
             goblinArcherOdds = 20;
             goblinBeserkerOdds = 45;
             goblinCheiftanOdds = 25;
         }
-        if (wave <= 100)
+        else if(wave <= 100)
         {
             goblinGruntOdds = 0;
             goblinArcherOdds = 20;
             goblinBeserkerOdds = 55;
             goblinCheiftanOdds = 25;
         }
-        if (wave <= 150)
+        else if (wave <= 150)
         {
             goblinGruntOdds = 0;
             goblinArcherOdds = 5;
@@ -194,11 +194,11 @@ public class WaveManager : MonoBehaviour
 
             GameObject boat = Instantiate(boatPrefab, spawnpoint.transform);
 
-            var boatMovementScript = boat.GetComponent<BoatMovement>();
+            BoatMovement boatMovementScript = boat.GetComponent<BoatMovement>();
 
             GenerateCargo();
 
-            //boatMovementScript.SetCargo();
+            //boatMovementScript.SetCargo(goblinGrunts, goblinArchers, goblinBeserkers, goblinCheiftans);
         }
     }
 }
