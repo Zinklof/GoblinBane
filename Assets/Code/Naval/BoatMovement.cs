@@ -37,6 +37,11 @@ public class BoatMovement : MonoBehaviour
         cheiftans = goblinCheiftanNum;
     }
 
+    public void setSpawnReference(Transform spawnPoint)
+    {
+        iSpawnedHere = spawnPoint;
+    }
+
     Transform GetClosestCoastPoint(List<Transform> coastPoints)
     {
         Transform bestTarget = null;
@@ -83,18 +88,25 @@ public class BoatMovement : MonoBehaviour
             {
                 Instantiate(gruntPrefab, cargoDeployment);
                 grunts--;
+                timeSinceSpawn = 0;
             }
             else if (archers > 0)
             {
                 Instantiate(archerPrefab, cargoDeployment);
+                archers--;
+                timeSinceSpawn = 0;
             }
             else if (beserkers > 0)
             {
                 Instantiate(beserkerPrefab, cargoDeployment);
+                beserkers--;
+                timeSinceSpawn = 0;
             }
             else if (cheiftans > 0)
             {
                 Instantiate(cheiftanPrefab, cargoDeployment);
+                cheiftans--;
+                timeSinceSpawn = 0;
             }
             else
             {

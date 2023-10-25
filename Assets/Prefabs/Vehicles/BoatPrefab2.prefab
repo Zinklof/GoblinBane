@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3388629271567270130}
   boatFront: {fileID: 3304771516848451621}
-  gruntPrefab: {fileID: 919132149155446097, guid: 7e8b576621a2fd9449addda4d305bab4, type: 3}
+  gruntPrefab: {fileID: 7313850955252241792, guid: 17c77a6325b03854cb09ad86815b054a, type: 3}
   archerPrefab: {fileID: 919132149155446097, guid: 8a6642d054932a84a932253f75df3e47, type: 3}
   beserkerPrefab: {fileID: 919132149155446097, guid: 8e6f980c2ea15ae47996c9958121acc3, type: 3}
   cheiftanPrefab: {fileID: 919132149155446097, guid: 8e9ee81973827a94f84fd8d05a5a0f23, type: 3}
@@ -142,7 +142,12 @@ MonoBehaviour:
   beserkers: 0
   cheiftans: 0
   cargoDeployment: {fileID: 0}
-  spawnRateSeconds: 1
+  spawnRateSeconds: 0.15
+  distanceFromDeploy: 0
+  timeSinceSpawn: 0
+  iSpawnedHere: {fileID: 0}
+  reachedDeploymentStage: 0
+  finDeploy: 0
 --- !u!195 &3388629271567270130
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -196,9 +196,11 @@ public class WaveManager : MonoBehaviour
 
             BoatMovement boatMovementScript = boat.GetComponent<BoatMovement>();
 
+            boatMovementScript.setSpawnReference(spawnpoint.transform);
+
             GenerateCargo();
 
-            //boatMovementScript.SetCargo(goblinGrunts, goblinArchers, goblinBeserkers, goblinCheiftans);
+            boatMovementScript.SetCargo(goblinGrunts, goblinArchers, goblinBeserkers, goblinCheiftans);
         }
     }
 }
