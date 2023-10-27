@@ -86,25 +86,25 @@ public class BoatMovement : MonoBehaviour
 
             if (grunts > 0)
             {
-                Instantiate(gruntPrefab, cargoDeployment);
+                Instantiate(gruntPrefab, cargoDeployment.position, transform.rotation);
                 grunts--;
                 timeSinceSpawn = 0;
             }
             else if (archers > 0)
             {
-                Instantiate(archerPrefab, cargoDeployment);
+                Instantiate(archerPrefab, cargoDeployment.position, transform.rotation);
                 archers--;
                 timeSinceSpawn = 0;
             }
             else if (beserkers > 0)
             {
-                Instantiate(beserkerPrefab, cargoDeployment);
+                Instantiate(beserkerPrefab, cargoDeployment.position, transform.rotation);
                 beserkers--;
                 timeSinceSpawn = 0;
             }
             else if (cheiftans > 0)
             {
-                Instantiate(cheiftanPrefab, cargoDeployment);
+                Instantiate(cheiftanPrefab, cargoDeployment.position, transform.rotation);
                 cheiftans--;
                 timeSinceSpawn = 0;
             }

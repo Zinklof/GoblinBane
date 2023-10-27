@@ -22,6 +22,7 @@ public class BuildingHealth : MonoBehaviour
     private void Awake()
     {
         playerObject = GameObject.FindGameObjectWithTag("Player");
+        ObjectChecker.AddObject(transform);
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class BuildingHealth : MonoBehaviour
     {
         if (health < 0)
         {
+            ObjectChecker.RemoveObject(transform);
             Destroy(gameObject);
         }
 

@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
     [Header("references")]
     [SerializeField] GameObject boatPrefab;
-    [Header("Boat")]
+    [SerializeField] TMP_Text gobCountText; 
     [SerializeField] List<GameObject> spawnpoints = new List<GameObject>();
     [Header("Debug Variables")]
     [SerializeField] int wave;
@@ -22,13 +24,21 @@ public class WaveManager : MonoBehaviour
     [SerializeField] int goblinArcherOdds;
     [SerializeField] int goblinBeserkerOdds;
     [SerializeField] int goblinCheiftanOdds;
+    [Header("wave info")]
+    [SerializeField] int goblinCount;
 
     private int goblinArcherTrueOdds;
     private int goblinBeserkerTrueOdds;
+    private int maxGoblins = 20;
+
+    public void GoblinDied()
+    {
+        goblinCount--;
+        gobCountText.text = "Goblins: " + goblinCount;
+    }
 
     private void Start()
     {
-        Debug.Log(spawnpoints.Count);
         StartWave();
     }
 
@@ -37,11 +47,12 @@ public class WaveManager : MonoBehaviour
         GetSpawns();
         wave++;
 
+        goblinCount = BoatNumber() * 21;
+        gobCountText.text = "Goblins: " + goblinCount;
+
         DefineEnemyOdds();
 
-        int num = BoatNumber();
-
-        SpawnBoat(spawnpoints, num);
+        SpawnBoat(spawnpoints, BoatNumber());
     }
 
     private void GetSpawns()
@@ -153,8 +164,11 @@ public class WaveManager : MonoBehaviour
             return 10;
         else if (wave < 70)
             return 11;
-        else 
+        else
+        {
+            maxGoblins = 40;
             return 12;
+        }
     }
 
     private void GenerateCargo()
@@ -165,7 +179,7 @@ public class WaveManager : MonoBehaviour
         goblinCheiftans = 0;
 
 
-        for (int i = 0; i <= 20; i++) 
+        for (int i = 0; i <= maxGoblins; i++) 
         {
             int rng = Random.Range(0, 100);
             rng++;
@@ -192,7 +206,7 @@ public class WaveManager : MonoBehaviour
 
             availableSpawnpoints.RemoveAt(temp);
 
-            GameObject boat = Instantiate(boatPrefab, spawnpoint.transform);
+            GameObject boat = Instantiate(boatPrefab, spawnpoint.transform.position, spawnpoint.transform.rotation);
 
             BoatMovement boatMovementScript = boat.GetComponent<BoatMovement>();
 
@@ -201,6 +215,14 @@ public class WaveManager : MonoBehaviour
             GenerateCargo();
 
             boatMovementScript.SetCargo(goblinGrunts, goblinArchers, goblinBeserkers, goblinCheiftans);
+        }
+    }
+
+    private void Update()
+    {
+        if (goblinCount <= 0)
+        {
+            StartWave();
         }
     }
 }

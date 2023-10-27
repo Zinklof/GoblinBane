@@ -7,6 +7,9 @@ TagManager:
   - Spawnpoint
   - CoastalPoint
   - building
+  - Scriptoid
+  - Island
+  - Goblin
   layers:
   - Default
   - TransparentFX

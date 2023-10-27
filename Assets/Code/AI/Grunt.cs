@@ -6,60 +6,49 @@ using UnityEngine.AI;
 public class Grunt : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] float health = 100;
+    [SerializeField] int health = 100;
     [SerializeField] int damage = 15;
     [SerializeField] float attackSpeedSeconds = 0.25f;
     [SerializeField] float attackDistance = 1;
+    [SerializeField] float stoppingDistance = 0;
+    [SerializeField] int moneyGain = 25;
     [Header("References")]
-    [SerializeField] List<Transform> buildings = new List<Transform>();
     [SerializeField] NavMeshAgent agent;
+    [SerializeField] WaveManager waveManager;
+    [SerializeField] MoneyManager moneyManager;
     [SerializeField] BuildingHealth buildingHealth = null;
+    [SerializeField] Transform building = null;
     [Header("Debug Variables")]
     [SerializeField] float attackDelay;
     [SerializeField] float distanceFromTarget;
 
-    Transform GetClosestBuilding()
+    public void freeze()
     {
-        Transform bestTarget = null;
-        float closestDistanceSqr = Mathf.Infinity;
-        Vector3 currentPosition = transform.position;
-        foreach (Transform potentialTarget in buildings)
-        {
-            Vector3 directionToTarget = potentialTarget.position - currentPosition;
-            float dSqrToTarget = directionToTarget.sqrMagnitude;
-            if (dSqrToTarget < closestDistanceSqr)
-            {
-                closestDistanceSqr = dSqrToTarget;
-                bestTarget = potentialTarget;
-            }
-        }
 
-        return bestTarget;
+    }
+
+    public void Poison()
+    {
+
+    }
+
+    public void DamageGoblin(int damage)
+    {
+        health -= damage;
     }
 
     private void Awake()
     {
-        foreach (GameObject go in GameObject.FindGameObjectsWithTag("building"))
-        {
-            buildings.Add(go.transform);
-        }
-    }
-
-    private void FixedUpdate()
-    {
-        buildings.Clear();
-
-        foreach (GameObject go in GameObject.FindGameObjectsWithTag("building"))
-        {
-            buildings.Add(go.transform);
-        }
+        agent.stoppingDistance = stoppingDistance;
+        ObjectChecker.AddGoblin(gameObject);
+        GameObject temp = GameObject.FindGameObjectWithTag("Scriptoid");
+        waveManager = temp.GetComponent<WaveManager>();
+        moneyManager = temp.GetComponent<MoneyManager>();
     }
 
     private void getObjective()
     {
-        Transform building = GetClosestBuilding();
-
-        distanceFromTarget = Vector3.Distance(building.position, transform.position);
+        building = ObjectChecker.findClosestObject(transform);
 
         buildingHealth = building.GetComponent<BuildingHealth>();
 
@@ -76,10 +65,29 @@ public class Grunt : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (building != null)
+        {
+            distanceFromTarget = Vector3.Distance(building.position, transform.position);
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        getObjective();
+        if (health < 0)
+        {
+            waveManager.GoblinDied();
+            ObjectChecker.RemoveGoblin(gameObject);
+            moneyManager.SpendMoney(moneyGain);
+            Destroy(gameObject);
+        }
+
+        if (building == null)
+        {
+            getObjective();
+        }
 
         if (distanceFromTarget < attackDistance)
         {

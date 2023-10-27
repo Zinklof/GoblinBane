@@ -848,9 +848,12 @@ GameObject:
   - component: {fileID: 4794768562722532265}
   - component: {fileID: 8441341161368871948}
   - component: {fileID: 5963148837556490438}
+  - component: {fileID: -5759057967596070604}
+  - component: {fileID: -205317071898515508}
+  - component: {fileID: -7814748718692103734}
   m_Layer: 0
   m_Name: GoblinCheiftan
-  m_TagString: Untagged
+  m_TagString: Goblin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -924,6 +927,66 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-5759057967596070604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5314705190068760851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2327ea5b46fbf874298ec4d0f77d5842, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 150
+  damage: 20
+  attackSpeedSeconds: 0.3
+  attackDistance: 2
+  stoppingDistance: 0
+  moneyGain: 50
+  agent: {fileID: -205317071898515508}
+  waveManager: {fileID: 0}
+  moneyManager: {fileID: 0}
+  buildingHealth: {fileID: 0}
+  building: {fileID: 0}
+  attackDelay: 0
+  distanceFromTarget: 0
+--- !u!195 &-205317071898515508
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5314705190068760851}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.2
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.5
+  m_BaseOffset: 0.16
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 1
+--- !u!65 &-7814748718692103734
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5314705190068760851}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09282252, y: 0.06031739, z: 0.091645986}
+  m_Center: {x: 0, y: -0.000000006519258, z: -0.01728724}
 --- !u!1 &6215040514933954351
 GameObject:
   m_ObjectHideFlags: 0

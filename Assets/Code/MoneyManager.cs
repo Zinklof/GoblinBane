@@ -13,6 +13,7 @@ public class MoneyManager : MonoBehaviour
         if (cash > money)
         {
             cash -= money;
+            moneyUI.text = "$ " + cash;
             return true;
         }
         else
@@ -21,7 +22,7 @@ public class MoneyManager : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void Start()
     {
         moneyUI.text = "$ " + cash;
     }

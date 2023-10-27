@@ -850,9 +850,10 @@ GameObject:
   - component: {fileID: 9115559154840876117}
   - component: {fileID: 4010251711315645848}
   - component: {fileID: 6801356838961281576}
+  - component: {fileID: -8704588872654494921}
   m_Layer: 0
   m_Name: GoblinGrunt
-  m_TagString: Untagged
+  m_TagString: Goblin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -963,11 +964,28 @@ MonoBehaviour:
   damage: 15
   attackSpeedSeconds: 0.25
   attackDistance: 2
-  buildings: []
+  stoppingDistance: 0
+  moneyGain: 25
   agent: {fileID: 4010251711315645848}
+  waveManager: {fileID: 0}
+  moneyManager: {fileID: 0}
   buildingHealth: {fileID: 0}
+  building: {fileID: 0}
   attackDelay: 0
   distanceFromTarget: 0
+--- !u!65 &-8704588872654494921
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7313850955252241792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.09282252, y: 0.06031739, z: 0.091645986}
+  m_Center: {x: 0, y: -0.000000006519258, z: -0.01728724}
 --- !u!1 &8357575696474414867
 GameObject:
   m_ObjectHideFlags: 0
