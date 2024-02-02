@@ -10,6 +10,7 @@ TagManager:
   - Scriptoid
   - Island
   - Goblin
+  - Camera
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - UI
   - SpawnPoints
   - Ground
-  - 
+  - sun
   - 
   - 
   - 
