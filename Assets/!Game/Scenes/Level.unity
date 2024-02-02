@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1643709290}
-  m_IndirectSpecularColor: {r: 0.55184793, g: 0.85065246, b: 0.92901146, a: 1}
+  m_IndirectSpecularColor: {r: 0.55202174, g: 0.8510003, b: 0.92892516, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -333,7 +333,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (8)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -490,7 +490,7 @@ GameObject:
   m_Layer: 3
   m_Name: CoastalPoint (11)
   m_TagString: CoastalPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -830,7 +830,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (10)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1116,7 +1116,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (15)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1494,7 +1494,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (14)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2003,7 +2003,7 @@ GameObject:
   m_Layer: 3
   m_Name: CoastalPoint (8)
   m_TagString: CoastalPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2117,7 +2117,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (12)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2231,7 +2231,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (1)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2429,7 +2429,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: ff63c85ef29c8fc418928b778f39e163, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: ff63c85ef29c8fc418928b778f39e163, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2616,7 +2616,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (4)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3354,7 +3354,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (2)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3603,7 +3603,7 @@ GameObject:
   m_Layer: 3
   m_Name: CoastalPoint (4)
   m_TagString: CoastalPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3717,7 +3717,7 @@ GameObject:
   m_Layer: 3
   m_Name: CoastalPoint (2)
   m_TagString: CoastalPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3928,7 +3928,7 @@ GameObject:
   m_Layer: 3
   m_Name: CoastalPoint (5)
   m_TagString: CoastalPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4932,7 +4932,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (13)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5073,7 +5073,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (5)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5575,7 +5575,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (7)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5945,7 +5945,7 @@ GameObject:
   m_Layer: 3
   m_Name: CoastalPoint (3)
   m_TagString: CoastalPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6059,7 +6059,7 @@ GameObject:
   m_Layer: 3
   m_Name: CoastalPoint (1)
   m_TagString: CoastalPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6200,7 +6200,7 @@ GameObject:
   m_Layer: 3
   m_Name: CoastalPoint (6)
   m_TagString: CoastalPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6314,7 +6314,7 @@ GameObject:
   m_Layer: 3
   m_Name: CoastalPoint (9)
   m_TagString: CoastalPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -7090,7 +7090,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (11)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -8005,7 +8005,7 @@ GameObject:
   m_Layer: 3
   m_Name: CoastalPoint (12)
   m_TagString: CoastalPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13787,7 +13787,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (3)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14036,7 +14036,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (9)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14371,7 +14371,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (6)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14485,7 +14485,7 @@ GameObject:
   m_Layer: 3
   m_Name: CoastalPoint (7)
   m_TagString: CoastalPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14734,7 +14734,7 @@ GameObject:
   m_Layer: 3
   m_Name: Spawn (16)
   m_TagString: Spawnpoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -14992,7 +14992,7 @@ GameObject:
   m_Layer: 3
   m_Name: CoastalPoint (10)
   m_TagString: CoastalPoint
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
