@@ -245,7 +245,5 @@ public class WaveManager : MonoBehaviour
         {
             StartWave();
         }
-
-        Debug.Log("Buildings: " + ObjectChecker.buildings.Count + " - " + "Goblins: " + ObjectChecker.goblins.Count);
     }
 }
