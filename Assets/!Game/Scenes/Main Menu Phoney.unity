@@ -8815,6 +8815,14 @@ PrefabInstance:
       propertyPath: agent
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2620648676313068158, guid: bf638b5844dcf9943b380ab3525664d3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2620648676313068158, guid: bf638b5844dcf9943b380ab3525664d3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5944214709637207048, guid: bf638b5844dcf9943b380ab3525664d3, type: 3}
       propertyPath: m_Name
       value: BoatPrefab2
