@@ -11,10 +11,12 @@ public class WaveManager : MonoBehaviour
     [SerializeField] GameObject armagoblinMusicManagerObject;
     [SerializeField] VolumeProfile volumeProfile;
     [SerializeField] Volume volume;
+    [SerializeField] List<GameObject> spawnpoints = new List<GameObject>();
+    [Header("UI")]
     [SerializeField] TMP_Text gobCountText;
     [SerializeField] TMP_Text waveCountText;
     [SerializeField] TMP_Text killCountText;
-    [SerializeField] List<GameObject> spawnpoints = new List<GameObject>();
+    [SerializeField] TMP_Text TimePassed;
     [Header("Debug Variables")]
     [SerializeField] int wave;
     [SerializeField] GameObject spawnpoint;
@@ -22,6 +24,8 @@ public class WaveManager : MonoBehaviour
     [SerializeField] int goblinArchers;
     [SerializeField] int goblinBeserkers;
     [SerializeField] int goblinCheiftans;
+    [SerializeField] int minutes;
+    [SerializeField] int hours;
     [Header("Debug Variables RNG")]
     [SerializeField] int goblinGruntOdds;
     [SerializeField] int goblinArcherOdds;
@@ -41,7 +45,7 @@ public class WaveManager : MonoBehaviour
     public void GoblinDied()
     {
         goblinCount--;
-        gobCountText.text = "Goblins: " + goblinCount;
+        gobCountText.text = "" + goblinCount;
         kills++;
         killCountText.text = "Kills: " + kills;
     }
@@ -62,8 +66,8 @@ public class WaveManager : MonoBehaviour
         wave++;
 
         goblinCount = BoatNumber() * 21;
-        gobCountText.text = "Goblins: " + goblinCount;
-        waveCountText.text = "wave: " + wave;
+        gobCountText.text = "" + goblinCount;
+        waveCountText.text = "Wave: " + wave;
 
         DefineEnemyOdds();
 
@@ -237,6 +241,14 @@ public class WaveManager : MonoBehaviour
 
             boatMovementScript.SetCargo(goblinGrunts, goblinArchers, goblinBeserkers, goblinCheiftans);
         }
+    }
+
+    private void FixedUpdate()
+    {
+        minutes = (int)Mathf.Floor(Time.timeSinceLevelLoad / 60f) - hours * 60;
+        hours = (int)Mathf.Floor(minutes / 60);
+
+        TimePassed.text = hours + ":" + minutes + ":" + Mathf.FloorToInt(((Time.timeSinceLevelLoad - (minutes * 60)) - ((hours * 60) * 60)));
     }
 
     private void Update()
