@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using ZinklofDev.Console;
-using ZinlofDev.Console;
 
 namespace ZinklofDev.Console
 {
@@ -55,7 +54,7 @@ namespace ZinklofDev.Console
             }
             if (log.type == ConsoleTypes.GSLogType.Response)
             {
-                transformedLog = "<color=#999999>" + log.log + "</color>";
+                transformedLog = "<color=#0f0f0f>" + log.log + "</color>";
             }
             else
             {
@@ -63,6 +62,11 @@ namespace ZinklofDev.Console
             }
 
             AddLog(transformedLog);
+        }
+
+        public void ClearLog()
+        {
+            lines.clear();
         }
 
         void AddLog(string logString)
