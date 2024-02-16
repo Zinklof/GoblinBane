@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ZinlofDev.Console
+namespace ZinklofDev.Console
 {
     [AttributeUsage(AttributeTargets.Method)]
     public class CommandAttribute : Attribute
