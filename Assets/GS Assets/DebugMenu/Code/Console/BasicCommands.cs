@@ -6,7 +6,7 @@ using ZinklofDev.Console;
 {
     public class BasicCommands : MonoBehaviour
     {
-        public static Command HELLOWORLD = new Command("0000x0000000000", "HelloWorld", "Prints HelloWorld", () => 
+        public static Command HELLOWORLD = new Command("0000x0000000000", "HelloWorld", "Prints HelloWorld", false, () =>
         {
             ZinklofDev.Console.BasicCommands.HelloWorld();
         });
@@ -17,17 +17,22 @@ using ZinklofDev.Console;
         }
 
         // 1 = on, 0 = off, everything else returns out of bounds
-        public static Command<int> DEBUGCHEATS = new Command<int>("0000x0000000001", "debugcheats", "Turns on Cheats", (t1) =>
+        public static Command<byte> DEBUGCHEATS = new Command<byte>("0000x0000000001", "debugcheats", "Turns on Cheats", false, (t1) =>
         {
             DebugCheats(t1);
         });
 
-        public static Command<int, int> ADDITION = new Command<int, int>("0000x0000000003", "add", "Adds two values together (two ints)", (t1, t2) =>
+        public static Command<int, int> ADDITION = new Command<int, int>("0000x0000000003", "add", "Adds two values together (two ints)", false, (t1, t2) =>
         {
             Addition(t1, t2);
         });
 
-        public static void DebugCheats(int value)
+        public static Command EXIT = new Command("0000x0000000004", "exit", "Exits the program", false, () =>
+        {
+            ZinklofDev.Console.BasicCommands.Exit();
+        }); 
+
+        public static void DebugCheats(byte value)
         {
             if (value == 1)
             {
@@ -41,8 +46,13 @@ using ZinklofDev.Console;
             }
             else
             {
-                Log.LogError(value + " Is not a valid parameter/value for the command 'DebugCheats'. Use 1 or 0", "BasicCommands.cs(Line 44)");
+                Log.LogError(value + " Is not a valid parameter/value for the command 'DebugCheats'. Use 1 or 0", "BasicCommands.cs(Line 49)");
             }
+        }
+
+        public static void Exit()
+        {
+            Application.Quit();
         }
 
         public static void Addition (int value, int value2)

@@ -18,7 +18,6 @@ public class Grunt : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] AudioSource audioManager;
     [SerializeField] WaveManager waveManager;
-    [SerializeField] MoneyManager moneyManager;
     [SerializeField] BuildingHealth buildingHealth = null;
     [SerializeField] Transform building = null;
     [Header("Audio")]
@@ -56,7 +55,6 @@ public class Grunt : MonoBehaviour
         ObjectChecker.AddGoblin(gameObject);
         GameObject temp = GameObject.FindGameObjectWithTag("Scriptoid");
         waveManager = temp.GetComponent<WaveManager>();
-        moneyManager = temp.GetComponent<MoneyManager>();
     }
 
     private void getObjective()
@@ -111,7 +109,7 @@ public class Grunt : MonoBehaviour
         {
             waveManager.GoblinDied();
             ObjectChecker.RemoveGoblin(gameObject);
-            moneyManager.SpendMoney(-moneyGain);
+            MoneyManager.SpendMoney(-moneyGain);
             Destroy(gameObject);
         }
 

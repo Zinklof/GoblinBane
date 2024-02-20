@@ -8,7 +8,6 @@ public class GhostObject : MonoBehaviour
     [SerializeField] int price = 100;
     [Header("References")]
     [SerializeField] GameObject placedObject;
-    [SerializeField] MoneyManager moneyManager;
     [SerializeField] Collider islandCollider;
     [SerializeField] AudioSource audioManager;
     [SerializeField] AudioClip success;
@@ -32,8 +31,11 @@ public class GhostObject : MonoBehaviour
 
     public void AttemptToBuild()
     {
-        bool temp = moneyManager.SpendMoney(price);
+        //bool temp = MoneyManager.SpendMoney(price);
 
+        building = true;
+
+        /*
         if (temp)
         {
             audioManager.clip = success;
@@ -46,6 +48,7 @@ public class GhostObject : MonoBehaviour
             audioManager.Play();
             return;
         }
+        */
     }
 
     private void Update()
@@ -64,15 +67,37 @@ public class GhostObject : MonoBehaviour
 
             if (Input.GetMouseButtonDown(0) && transform.position.y > 0.2)
             {
-                audioManager.clip = placed;
-                audioManager.Play();
-                Instantiate(placedObject, transform.position, transform.rotation);
-                building = false;
-                transform.position = new Vector3(0, 0, 0);
-                if (Input.GetKey(KeyCode.LeftShift))
+                bool temp = MoneyManager.SpendMoney(price);
+
+                if (temp)
                 {
-                    AttemptToBuild();
+                    audioManager.clip = placed;
+                    audioManager.Play();
+                    Instantiate(placedObject, transform.position, transform.rotation);
+                    building = false;
+                    transform.position = new Vector3(0, 0, 0);
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        AttemptToBuild();
+                    }
                 }
+                else
+                {
+                    audioManager.clip = fail;
+                    audioManager.Play();
+                    building = false;
+                    transform.position = new Vector3(0, 0, 0);
+                    if (Input.GetKey(KeyCode.LeftShift))
+                    {
+                        AttemptToBuild();
+                    }
+                    return;
+                }
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                transform.position = new Vector3(0, 0, 0);
+                building = false;
             }
         }
     }

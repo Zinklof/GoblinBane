@@ -1,4 +1,3 @@
-using CommandTerminal;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -6,17 +5,6 @@ using UnityEngine;
 
 namespace ZinklofDev.Console
 {
-    [AttributeUsage(AttributeTargets.Method)]
-    public class CommandAttribute : Attribute
-    {
-        private CommandInfo commandInfo;
-
-        public CommandAttribute(CommandInfo commandInfo)
-        {
-            this.commandInfo = commandInfo;
-        }
-    }
-
     public static class ConsoleLogging
     {
         public enum GSLogType
@@ -48,16 +36,18 @@ namespace ZinklofDev.Console
         private string commandId;
         private string commandFormat;
         private string commandDescription;
+        private bool commandCheat;
 
         public string Id { get { return commandId; } }
         public string Format { get { return commandFormat; } }
         public string description { get { return commandDescription; } }
 
-        public CommandBasic(string id, string format, string description)
+        public CommandBasic(string id, string format, string description, bool isCheat)
         {
             commandId = id;
             commandFormat = format;
             commandDescription = description;
+            this.commandCheat = isCheat;
         }
     }
 
@@ -65,7 +55,7 @@ namespace ZinklofDev.Console
     {
         private Action command;
 
-        public Command(string id, string format, string description, Action command) : base (id, format, description) 
+        public Command(string id, string format, string description, bool isCheat, Action command) : base (id, format, description, isCheat)
         {
             this.command = command;
         }
@@ -80,7 +70,7 @@ namespace ZinklofDev.Console
     {
         private Action<T1> command;
 
-        public Command(string id, string format, string description, Action<T1> command) : base (id, format, description)
+        public Command(string id, string format, string description, bool isCheat, Action<T1> command) : base (id, format, description, isCheat)
         {
             this.command = command;
         }
@@ -95,7 +85,7 @@ namespace ZinklofDev.Console
     {
         private Action<T1, T2> command;
 
-        public Command(string id, string format, string description, Action<T1, T2> command) : base(id, format, description)
+        public Command(string id, string format, string description, bool isCheat, Action<T1, T2> command) : base(id, format, description, isCheat)
         {
             this.command = command;
         }
@@ -110,7 +100,7 @@ namespace ZinklofDev.Console
     {
         private Action<T1, T2, T3> command;
 
-        public Command(string id, string format, string description, Action<T1, T2, T3> command) : base(id, format, description)
+        public Command(string id, string format, string description, bool isCheat, Action<T1, T2, T3> command) : base(id, format, description, isCheat)
         {
             this.command = command;
         }
