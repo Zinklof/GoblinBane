@@ -1830,11 +1830,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1080051580 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3975398622007561779, guid: 6348562654f175241be7eb0ab2bacb16, type: 3}
-  m_PrefabInstance: {fileID: 3975398621034501617}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1088167920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,42 +1976,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3975398622007561780, guid: 6348562654f175241be7eb0ab2bacb16, type: 3}
   m_PrefabInstance: {fileID: 3975398621034501617}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080051580}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d946187544ced5545be5419db379c615, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1174428617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1080051580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c1d27744843864428a6fdd72f47cbdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxHeight: 0.7
-  SmallTerminalRatio: 0.33
-  ToggleSpeed: 360
-  ToggleHotkey: '`'
-  ToggleFullHotkey: '#`'
-  BufferSize: 512
-  ConsoleFont: {fileID: 12800000, guid: ec38358b07d19474086b2dbf2ad41e47, type: 3}
-  InputCaret: '>'
-  ShowGUIButtons: 0
-  RightAlignButtons: 0
-  InputContrast: 0
-  InputAlpha: 0.5
-  BackgroundColor: {r: 0, g: 0, b: 0, a: 1}
-  ForegroundColor: {r: 1, g: 1, b: 1, a: 1}
-  ShellColor: {r: 1, g: 1, b: 1, a: 1}
-  InputColor: {r: 0, g: 1, b: 1, a: 1}
-  WarningColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  ErrorColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1197735012 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f801a1ca5cd876742b558706ffcbab33, type: 3}
@@ -2781,6 +2746,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: AttemptToBuild
       objectReference: {fileID: 0}
+    - target: {fileID: 5926127240373318325, guid: a7e9198ba2a320240959e16c6a56b008, type: 3}
+      propertyPath: m_Size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5926127241096369483, guid: a7e9198ba2a320240959e16c6a56b008, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -2843,7 +2812,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5926127241404430541, guid: a7e9198ba2a320240959e16c6a56b008, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.000061035156
+      value: 0.000061035156
       objectReference: {fileID: 0}
     - target: {fileID: 5965977116507933874, guid: a7e9198ba2a320240959e16c6a56b008, type: 3}
       propertyPath: m_IsActive

@@ -1,15 +1,58 @@
-﻿using ZinklofDev.Console
+﻿using JetBrains.Annotations;
+using UnityEngine;
+using ZinklofDev.Console;
 
-namespace Assets.GS_Assets.DebugMenu.Code.Console
+ namespace ZinklofDev.Console
 {
-    namespace ZinklofDev.Console
+    public class BasicCommands : MonoBehaviour
     {
-        internal class BasicCommands
+        public static Command HELLOWORLD = new Command("0000x0000000000", "HelloWorld", "Prints HelloWorld", () => 
         {
-            public class Clear()
+            ZinklofDev.Console.BasicCommands.HelloWorld();
+        });
+
+        public static void HelloWorld()
+        {
+            Log.LogMisc("Hello World!", "BasicCommands.cs Line(14)");
+        }
+
+        // 1 = on, 0 = off, everything else returns out of bounds
+        public static Command<int> DEBUGCHEATS = new Command<int>("0000x0000000001", "debugcheats", "Turns on Cheats", (t1) =>
+        {
+            DebugCheats(t1);
+        });
+
+        public static Command<int, int> ADDITION = new Command<int, int>("0000x0000000003", "add", "Adds two values together (two ints)", (t1, t2) =>
+        {
+            Addition(t1, t2);
+        });
+
+        public static void DebugCheats(int value)
+        {
+            if (value == 1)
             {
-                ConsoleLog.
+                ZinklofDev.Console.Shell.CheatsOn = true;
+                Log.LogResponse("Debug Cheats are enabled");
             }
+            else if (value == 0)
+            {
+                ZinklofDev.Console.Shell.CheatsOn = false;
+                Log.LogResponse("Debug Cheats are disabled");
+            }
+            else
+            {
+                Log.LogError(value + " Is not a valid parameter/value for the command 'DebugCheats'. Use 1 or 0", "BasicCommands.cs(Line 44)");
+            }
+        }
+
+        public static void Addition (int value, int value2)
+        {
+            Log.LogResponse(value + " + " +  value2 + " = " + (value + value2));
+        }
+
+        private void Awake()
+        {
+            Shell.RegisterCommand(HELLOWORLD);
         }
     }
 }
