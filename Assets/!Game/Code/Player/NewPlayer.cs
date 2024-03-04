@@ -15,7 +15,7 @@ public class NewPlayer : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftAlt))
         {
-            moveSpeed = 0.05f;
+            moveSpeed = 0.025f;
         }
         else if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -23,7 +23,7 @@ public class NewPlayer : MonoBehaviour
         }
         else
         {
-            moveSpeed = 0.1f;
+            moveSpeed = 0.05f;
         }
 
             Vector3 x = Input.GetAxis("Horizontal") * moveSpeed * transform.right;

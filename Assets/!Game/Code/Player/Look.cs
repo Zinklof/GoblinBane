@@ -10,12 +10,23 @@ public class Look : MonoBehaviour
     [SerializeField] private GameObject playerObject;
     [Header("Variables")]
     [SerializeField] private float sensitivity;
+    [SerializeField] private Vector3 cameraRotationEuler;
 
     private void XRotation()
     {
         float x = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 
-        playerCamera.transform.Rotate(-x, 0, 0);
+        cameraRotationEuler += new Vector3(-x, 0, 0);
+        if (cameraRotationEuler.x > 90 )
+        {
+            cameraRotationEuler.x = 90;
+        }
+        if (cameraRotationEuler.x < -90)
+        {
+            cameraRotationEuler.x = -90;
+        }
+
+        playerCamera.transform.localRotation = Quaternion.Euler(cameraRotationEuler);
     }
 
     private void YRotation()

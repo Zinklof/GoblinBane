@@ -831,7 +831,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 100
   placedObject: {fileID: 245279441678011611, guid: 31a9b863ddf94b841a085cff0d125c6c, type: 3}
-  moneyManager: {fileID: 1174428613}
   islandCollider: {fileID: 1132257544}
   audioManager: {fileID: 815321114}
   success: {fileID: 8300000, guid: 6b873a61ed94b444c8691040ab11b7e0, type: 3}
@@ -1684,7 +1683,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 300
   placedObject: {fileID: 3588545657683208480, guid: 3c4e1e2c0f908a5479aff45abee07ad3, type: 3}
-  moneyManager: {fileID: 1174428613}
   islandCollider: {fileID: 1132257544}
   audioManager: {fileID: 815321114}
   success: {fileID: 8300000, guid: 6b873a61ed94b444c8691040ab11b7e0, type: 3}
@@ -1773,7 +1771,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 6000
   placedObject: {fileID: 245279441678011611, guid: 90f804a8a63e0934785374803dc98769, type: 3}
-  moneyManager: {fileID: 1174428613}
   islandCollider: {fileID: 1132257544}
   audioManager: {fileID: 815321114}
   success: {fileID: 8300000, guid: 6b873a61ed94b444c8691040ab11b7e0, type: 3}
@@ -1971,17 +1968,6 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 9ccb1ec4bd115f04a8b952ff7d814137, type: 2}
   m_BuildHeightMesh: 0
---- !u!114 &1174428613 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3975398622007561780, guid: 6348562654f175241be7eb0ab2bacb16, type: 3}
-  m_PrefabInstance: {fileID: 3975398621034501617}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d946187544ced5545be5419db379c615, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1197735012 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f801a1ca5cd876742b558706ffcbab33, type: 3}
@@ -2001,7 +1987,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 350
   placedObject: {fileID: 245279441678011611, guid: b1e322db16af0cc44bd8afcf30b2e3d8, type: 3}
-  moneyManager: {fileID: 1174428613}
   islandCollider: {fileID: 1132257544}
   audioManager: {fileID: 815321114}
   success: {fileID: 8300000, guid: 6b873a61ed94b444c8691040ab11b7e0, type: 3}
@@ -2157,7 +2142,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 1100
   placedObject: {fileID: 245279441678011611, guid: a0fc43e59ef004941bd5bdf4ad37572d, type: 3}
-  moneyManager: {fileID: 1174428613}
   islandCollider: {fileID: 1132257544}
   audioManager: {fileID: 815321114}
   success: {fileID: 8300000, guid: 6b873a61ed94b444c8691040ab11b7e0, type: 3}
@@ -3350,7 +3334,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   price: 4000
   placedObject: {fileID: 245279441678011611, guid: 4f75d199134dd964cb0a0993655e67bc, type: 3}
-  moneyManager: {fileID: 1174428613}
   islandCollider: {fileID: 1132257544}
   audioManager: {fileID: 815321114}
   success: {fileID: 8300000, guid: 6b873a61ed94b444c8691040ab11b7e0, type: 3}
@@ -3697,6 +3680,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AGMMO
       objectReference: {fileID: 0}
+    - target: {fileID: 522510171443244179, guid: a3c95cc133cc0084e9702f823b6977d9, type: 3}
+      propertyPath: m_Clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3bc7f9f05eb19774287633f11d54a568, type: 3}
+    - target: {fileID: 522510171443244179, guid: a3c95cc133cc0084e9702f823b6977d9, type: 3}
+      propertyPath: m_ClipLooped
+      value: 
+      objectReference: {fileID: 8300000, guid: ce6d930cd1fe7cf4aacbed19440307d4, type: 3}
     - target: {fileID: 522510171443244204, guid: a3c95cc133cc0084e9702f823b6977d9, type: 3}
       propertyPath: m_RootOrder
       value: 17

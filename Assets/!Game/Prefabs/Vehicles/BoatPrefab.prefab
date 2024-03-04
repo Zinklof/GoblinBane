@@ -61,7 +61,7 @@ MonoBehaviour:
   beserkers: 0
   cheiftans: 0
   cargoDeployment: {fileID: 0}
-  spawnRateSeconds: 0.3
+  spawnRateSeconds: 0.01
   timeSinceSpawn: 0
   iSpawnedHere: {fileID: 0}
   reachedDeploymentStage: 0

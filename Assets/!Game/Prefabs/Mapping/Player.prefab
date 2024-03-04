@@ -165,7 +165,7 @@ MonoBehaviour:
   playerObject: {fileID: 5308345026722955181}
   cameraObject: {fileID: 5308345027030987509}
   characterController: {fileID: 5308345026722955177}
-  moveSpeed: 0.1
+  moveSpeed: 0.05
 --- !u!1 &5308345027030987509
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +301,7 @@ MonoBehaviour:
   playerCamera: {fileID: 5308345027030987503}
   playerObject: {fileID: 5308345026722955181}
   sensitivity: 1400
+  cameraRotationEuler: {x: 0, y: 0, z: 0}
 --- !u!114 &5308345027030987507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +324,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 5308345026722955179}
     m_Modifications:
+    - target: {fileID: 2269028332041806485, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4708408211701452472, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -534,6 +539,70 @@ PrefabInstance:
     - target: {fileID: 4708408213223476915, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013181761694403088, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013181761694403088, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013181761694403088, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 147.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 5013181761694403088, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -475.63925
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312645644249478877, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312645644249478877, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312645644249478877, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 147.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 5312645644249478877, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -67.94846
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100497407135320325, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100497407135320325, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100497407135320325, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 147.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 6100497407135320325, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -203.8454
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407053440364484154, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407053440364484154, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407053440364484154, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 182.88824
+      objectReference: {fileID: 0}
+    - target: {fileID: 8407053440364484154, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -339.7423
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

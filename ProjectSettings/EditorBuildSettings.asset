@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/!Game/Scenes/Main Menu.unity
     guid: 570e75bd43b21594c86a3c1ab1b19ce6
   - enabled: 1
+    path: Assets/!Game/Scenes/Main Menu Phoney.unity
+    guid: 23e2cd239cc1c6247811a720adc22e7a
+  - enabled: 1
+    path: Assets/!Game/Scenes/Credits.unity
+    guid: f33ecfe3b6d78ed4b8987113d9e0f9c1
+  - enabled: 1
     path: Assets/!Game/Scenes/Level.unity
     guid: e47c8e77b8d0344449bc01aaf661548b
   - enabled: 1
-    path: Assets/!Game/Scenes/Main Menu Phoney.unity
-    guid: 23e2cd239cc1c6247811a720adc22e7a
+    path: Assets/!Game/Scenes/LevelClassic.unity
+    guid: a5d4208b017abec43b182a48398662cd
   m_configObjects: {}
