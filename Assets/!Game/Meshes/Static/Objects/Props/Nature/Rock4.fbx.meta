@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 175d6944614819b4b92487e4087a4c09
+guid: 81f559285aca2f94584f4249d8efb648
 ModelImporter:
   serializedVersion: 22102
   internalIDToNameTable: []
@@ -7,7 +7,7 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: aiStandardSurface1
+      name: defaultPolygonShader
     second: {fileID: 2100000, guid: 5eb6a2b6d236c32458f72e05eda91347, type: 2}
   materials:
     materialImportMode: 2
