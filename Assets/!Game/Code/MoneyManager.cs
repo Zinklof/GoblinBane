@@ -19,6 +19,7 @@ public class MoneyManager : MonoBehaviour
     public static Command<int> SETMONEY = new Command<int>("0001x000000091", "setmoney", "sets money to x", true, (t1) =>
     {
         cash = t1;
+        _moneyUI.text = "" + cash;
         Log.LogResponse("Set money to " + t1);
     });
 
@@ -46,6 +47,7 @@ public class MoneyManager : MonoBehaviour
         {
             Log.LogWarning("0 was entered into the addmoney command, this means it doesn't do anything. user error?");
         }
+        _moneyUI.text = "" + cash;
     }
 
     public static bool SpendMoney(int money)
@@ -75,6 +77,8 @@ public class MoneyManager : MonoBehaviour
 
     private void Awake()
     {
-       //not implimented shell support for variable commands!? lazy me, will return later
+        Shell.RegisterCommand(INFMONEY);
+        Shell.RegisterCommand(ADDMONEY);
+        Shell.RegisterCommand(SETMONEY);
     }
 }

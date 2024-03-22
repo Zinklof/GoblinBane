@@ -36,7 +36,7 @@ namespace ZinklofDev.Console
         private string commandId;
         private string commandFormat;
         private string commandDescription;
-        private bool commandCheat;
+        public bool commandCheat;
 
         public string Id { get { return commandId; } }
         public string Format { get { return commandFormat; } }

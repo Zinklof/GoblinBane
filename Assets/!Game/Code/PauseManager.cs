@@ -5,6 +5,7 @@ using UnityEngine;
 public class PauseManager : MonoBehaviour
 {
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject consoleMenu;
 
     public void resume()
     {
@@ -26,7 +27,11 @@ public class PauseManager : MonoBehaviour
             }
         }
 
-        if (Input.GetKey(KeyCode.Backslash) && !pauseMenu.activeInHierarchy)
+        if (consoleMenu.activeInHierarchy)
+        {
+            Time.timeScale = 0f;
+        }
+        else if (Input.GetKey(KeyCode.Backslash) && !pauseMenu.activeInHierarchy)
         {
             Time.timeScale = 4.5f;
         }

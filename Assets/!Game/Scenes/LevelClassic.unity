@@ -3492,6 +3492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1601284198}
+  - component: {fileID: 1601284199}
   m_Layer: 0
   m_Name: Rocks
   m_TagString: Untagged
@@ -3524,6 +3525,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1601284199
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601284197}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.705, y: 1.4, z: 1.715}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: -0.32, z: -0.14}
+  m_TimeToStationary: 0.5
 --- !u!114 &1634259130 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2746481607402351065, guid: a7e9198ba2a320240959e16c6a56b008, type: 3}
@@ -3791,7 +3808,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2f6021e17c800304a97bdd446e71431c, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []

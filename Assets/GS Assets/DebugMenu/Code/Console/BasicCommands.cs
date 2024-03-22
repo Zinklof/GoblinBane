@@ -16,18 +16,32 @@ using ZinklofDev.Console;
             Log.LogMisc("Hello World!", "BasicCommands.cs Line(14)");
         }
 
+        public static Command RENDERHITBOX = new Command("0000x000000005", "gs_renderer_hitboxes", "renders hitboxes of anything with a hitbox", false, () =>
+        {
+            bool temp = Player.ToggleHitboxes();
+            if (temp) { Log.LogResponse("Now rendering HitBoxes"); }
+            else { Log.LogResponse("No longer rendering HitBoxes"); }
+        });
+
+        public static Command RENDERBOUNDS = new Command("0000x000000005", "gs_renderer_bounds", "renders the boundarys of player movment", false, () =>
+        {
+            bool temp = Player.ToggleBounds();
+            if (temp) { Log.LogResponse("Now rendering Bounds"); }
+            else { Log.LogResponse("No longer rendering Bounds"); }
+        });
+
         // 1 = on, 0 = off, everything else returns out of bounds
-        public static Command<byte> DEBUGCHEATS = new Command<byte>("0000x0000000001", "debugcheats", "Turns on Cheats", false, (t1) =>
+        public static Command<byte> DEBUGCHEATS = new Command<byte>("0000x0000000001", "gs_cheats", "Turns on Cheats", false, (t1) =>
         {
             DebugCheats(t1);
         });
 
-        public static Command<int, int> ADDITION = new Command<int, int>("0000x0000000003", "add", "Adds two values together (two ints)", false, (t1, t2) =>
+        public static Command<int, int> ADDITION = new Command<int, int>("0000x0000000003", "gs_add", "Adds two values together (two ints)", false, (t1, t2) =>
         {
             Addition(t1, t2);
         });
 
-        public static Command EXIT = new Command("0000x0000000004", "exit", "Exits the program", false, () =>
+        public static Command EXIT = new Command("0000x0000000004", "gs_exit", "Exits the program", false, () =>
         {
             ZinklofDev.Console.BasicCommands.Exit();
         }); 
@@ -63,6 +77,11 @@ using ZinklofDev.Console;
         private void Awake()
         {
             Shell.RegisterCommand(HELLOWORLD);
+            Shell.RegisterCommand(EXIT);
+            Shell.RegisterCommand(DEBUGCHEATS);
+            //Shell.RegisterCommand(ADDITION);
+            Shell.RegisterCommand(RENDERBOUNDS);
+            Shell.RegisterCommand(RENDERHITBOX);
         }
     }
 }

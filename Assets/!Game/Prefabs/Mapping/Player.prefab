@@ -163,9 +163,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerObject: {fileID: 5308345026722955181}
-  cameraObject: {fileID: 5308345027030987509}
+  cameraObject: {fileID: 5308345027030987503}
   characterController: {fileID: 5308345026722955177}
-  moveSpeed: 0.05
+  baseSpeed: 0
+  altMult: 0
+  shiftMult: 0
 --- !u!1 &5308345027030987509
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,6 +542,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4733581180286478948, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+      propertyPath: consoleMenu
+      value: 
+      objectReference: {fileID: 5965977116507933874}
     - target: {fileID: 5013181761694403088, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -610,5 +616,10 @@ PrefabInstance:
 --- !u!224 &5926127240038002808 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4708408211835660233, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
+  m_PrefabInstance: {fileID: 1399059282074539953}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5965977116507933874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4729093610179697411, guid: 725e33f27e26ca74889c5930a5f2b541, type: 3}
   m_PrefabInstance: {fileID: 1399059282074539953}
   m_PrefabAsset: {fileID: 0}

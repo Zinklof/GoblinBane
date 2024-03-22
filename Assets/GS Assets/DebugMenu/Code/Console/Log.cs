@@ -56,7 +56,7 @@ namespace ZinklofDev.Console
             }
             else if (log.type == ConsoleLogging.GSLogType.Response)
             {
-                transformedLog = "<color=#0f0f0f>" + log.log + "</color>";
+                transformedLog = "<color=#aaaaaa>" + log.log + "</color>";
             }
             else
             {
