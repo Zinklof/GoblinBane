@@ -165,9 +165,9 @@ MonoBehaviour:
   playerObject: {fileID: 5308345026722955181}
   cameraObject: {fileID: 5308345027030987503}
   characterController: {fileID: 5308345026722955177}
-  baseSpeed: 0
-  altMult: 0
-  shiftMult: 0
+  baseSpeed: 15
+  altMult: 0.25
+  shiftMult: 3.5
 --- !u!1 &5308345027030987509
 GameObject:
   m_ObjectHideFlags: 0
