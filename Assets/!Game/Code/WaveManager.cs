@@ -3,6 +3,9 @@ using UnityEditor;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Rendering;
+using System;
+using ZinklofDev.Console;
+using System.Data.SqlTypes;
 
 public class WaveManager : MonoBehaviour
 {
@@ -36,11 +39,24 @@ public class WaveManager : MonoBehaviour
     [SerializeField] int kills;
 
     long epochLaunchTime;
+    public delegate void WaveManagerEventHandeler();
+    public static event WaveManagerEventHandeler WaveStarted;
+    public static event WaveManagerEventHandeler WaveCleared;
 
-
+    private static int _wave;
     private int goblinArcherTrueOdds;
     private int goblinBeserkerTrueOdds;
     private int maxGoblins = 20;
+
+    public static Command<int> SETWAVE = new Command<int>("0000x0000000080", "setwave", "Sets the wave to provided number", false, (t1) =>
+    {
+        SetWave(t1);
+    });
+
+    public static Command CLEARWAVE = new Command("0000x0000000081", "clearwave", "Kills all goblins and starts a new wave", false, () =>
+    {
+        ClearWave();
+    });
 
     public void GoblinDied()
     {
@@ -48,22 +64,32 @@ public class WaveManager : MonoBehaviour
         gobCountText.text = "" + goblinCount;
         kills++;
         killCountText.text = "Kills: " + kills;
+
+        if (goblinCount <= 0)
+        {
+            WaveStarted();
+        }
     }
 
     private void Start()
     {
-        StartWave();
+        _wave = 0;
+        WaveStarted += this.StartWave;
+        WaveStarted();
     }
 
     private void Awake()
     {
         ObjectChecker.ResetLists();
+        Shell.RegisterCommand(SETWAVE);
+        Shell.RegisterCommand(CLEARWAVE);
     }
 
-    public void StartWave()
+    protected virtual void StartWave()
     {
         GetSpawns();
-        wave++;
+        _wave++;
+        wave = _wave;
 
         goblinCount = BoatNumber() * 21;
         gobCountText.text = "" + goblinCount;
@@ -206,7 +232,7 @@ public class WaveManager : MonoBehaviour
 
         for (int i = 0; i <= maxGoblins; i++) 
         {
-            int rng = Random.Range(0, 100);
+            int rng = UnityEngine.Random.Range(0, 100);
             rng++;
 
             if (rng <= goblinGruntOdds)
@@ -225,7 +251,7 @@ public class WaveManager : MonoBehaviour
         for (int i = 0; i < number; i++)
         {
 
-            int temp = Random.Range(0, availableSpawnpoints.Count);
+            int temp = UnityEngine.Random.Range(0, availableSpawnpoints.Count);
 
             spawnpoint = availableSpawnpoints[temp];
 
@@ -243,19 +269,23 @@ public class WaveManager : MonoBehaviour
         }
     }
 
+    private static void SetWave(int input)
+    {
+        _wave = input - 1;
+        WaveStarted();
+    }
+
+    private static void ClearWave()
+    {
+        WaveCleared();
+        WaveStarted();
+    }
+
     private void FixedUpdate()
     {
         minutes = (int)Mathf.Floor(Time.timeSinceLevelLoad / 60f) - hours * 60;
         hours = (int)Mathf.Floor(minutes / 60);
 
         TimePassed.text = hours + ":" + minutes + ":" + Mathf.FloorToInt(((Time.timeSinceLevelLoad - (minutes * 60)) - ((hours * 60) * 60)));
-    }
-
-    private void Update()
-    {
-        if (goblinCount <= 0)
-        {
-            StartWave();
-        }
     }
 }

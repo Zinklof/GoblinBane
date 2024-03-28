@@ -41,10 +41,13 @@ namespace ZinklofDev.Console
             for(int i = 0; i < commandList.Count; i++)
             {
                 CommandBasic commandBasic = commandList[i] as CommandBasic;
-                if (commandBasic.commandCheat && !CheatsOn)
+                if (commandBasic.commandCheat == true && CheatsOn == false)
                 {
-                    Log.LogWarning("Cheats are currently disabled, use gs_cheats 1 to enable.");
-                    return;
+                    if (alteredInput[0] == commandBasic.Format)
+                    {
+                        Log.LogWarning("Cheats are currently disabled, use gs_cheats 1 to enable.");
+                        return;
+                    }
                 }
 
                 if (alteredInput[0] == commandBasic.Format)

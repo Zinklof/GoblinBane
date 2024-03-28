@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using ZinklofDev.Utils;
 using UnityEngine;
 
 public class TowerCode : MonoBehaviour
@@ -18,6 +19,8 @@ public class TowerCode : MonoBehaviour
     private void Awake()
     {
         target = ObjectChecker.findClosestGoblin(transform);
+        attackDistance = (float)MathZ.Square(attackDistance);
+        minAttackDistance = (float)MathZ.Square(minAttackDistance);
     }
 
     private void Attack()
@@ -53,12 +56,11 @@ public class TowerCode : MonoBehaviour
 
             if (target != null)
             {
-                if (Vector3.Distance(transform.position, target.transform.position) < attackDistance && Vector3.Distance(transform.position, target.transform.position) > minAttackDistance)
+                if (MathZ.VectorDistanceSquared(transform.position, target.transform.position) < attackDistance && MathZ.VectorDistanceSquared(transform.position, target.transform.position) > minAttackDistance)
                 {
                     Attack();
                 }
             }
-            attackDelay = attackSpeedSeconds;
         }
     }
 }

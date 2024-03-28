@@ -16,20 +16,13 @@ public class BuildingHealth : MonoBehaviour
     [SerializeField] float hpBarDivider = 1000;
     [SerializeField] float hpBarHeight = 0.3f;
 
+    public delegate void BuildingEventManager();
+    public event BuildingEventManager OnTowerDestroyed;
+
     public void Damage(float dmg)
     {
         health -= dmg;
-    }
 
-    private void Awake()
-    {
-        playerObject = GameObject.FindGameObjectWithTag("Player");
-        ObjectChecker.AddObject(transform);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         if (health < 0)
         {
             if (castle)
@@ -46,5 +39,11 @@ public class BuildingHealth : MonoBehaviour
         HealthBar.transform.localScale = new Vector3(temp, hpBarHeight, 1);
 
         HealthBar.transform.LookAt(playerObject.transform);
+    }
+
+    private void Awake()
+    {
+        playerObject = GameObject.FindGameObjectWithTag("Player");
+        ObjectChecker.AddObject(transform);
     }
 }

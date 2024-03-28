@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -46,15 +47,29 @@ public class Grunt : MonoBehaviour
     public void DamageGoblin(int damage)
     {
         health -= damage;
+        if (health < 0)
+        {
+            killGoblin();
+        }
+    }
+
+    private void killGoblin()
+    {
+        waveManager.GoblinDied();
+        ObjectChecker.RemoveGoblin(gameObject);
+        MoneyManager.SpendMoney(-moneyGain);
+        Destroy(gameObject);
     }
 
     private void Awake()
     {
+        attackDistance = attackDistance * attackDistance;
         startSpeed = moveSpeed;
         agent.stoppingDistance = stoppingDistance;
         ObjectChecker.AddGoblin(gameObject);
         GameObject temp = GameObject.FindGameObjectWithTag("Scriptoid");
         waveManager = temp.GetComponent<WaveManager>();
+        WaveManager.WaveCleared += this.killGoblin;
     }
 
     private void getObjective()
@@ -62,6 +77,7 @@ public class Grunt : MonoBehaviour
         building = ObjectChecker.findClosestObject(transform);
 
         buildingHealth = building.GetComponent<BuildingHealth>();
+        buildingHealth.OnTowerDestroyed += this.getObjective;
 
         agent.SetDestination(building.position);
     }
@@ -105,22 +121,9 @@ public class Grunt : MonoBehaviour
         idleDelay = idleDelay + tempTime;
         timeSinceDistanceCheck = timeSinceDistanceCheck + tempTime;
 
-        if (health < 0)
-        {
-            waveManager.GoblinDied();
-            ObjectChecker.RemoveGoblin(gameObject);
-            MoneyManager.SpendMoney(-moneyGain);
-            Destroy(gameObject);
-        }
-
-        if (building == null)
-        {
-            getObjective();
-        }
-
         if (building != null && timeSinceDistanceCheck > .5f)
         {
-            distanceFromTarget = Vector3.Distance(building.position, transform.position);
+            distanceFromTarget = (float)ZinklofDev.Utils.MathZ.VectorDistanceSquared(building.position, transform.position);
             timeSinceDistanceCheck = 0;
         }
 
@@ -128,10 +131,6 @@ public class Grunt : MonoBehaviour
         {
             attackDelay = attackDelay - tempTime;
             attack();
-        }
-        else
-        {
-            attackDelay = attackSpeedSeconds;
         }
 
         if (moveSpeed < startSpeed)
