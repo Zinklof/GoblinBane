@@ -1895,8 +1895,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: "<size=75>Special Thanks</size>\n\n\n<color=#4680ff><b><size=60>Beta Testing</size></b></color>\nCarlos
     \"Gomez Squared\" Gomez-Gomez\nLarry Riggins\nJacob \"Rhya\" N/A\nNethaniel Norris\nKaelib
-    Branca\nEli N/A\nMichael Thompson\nEric Fast\n\n\n<color=#55ff55><b><size=60>Inspirations</size></b></color>\nRonald
-    \"Mr. Flowe\" Flowers\nDani Dev\nSebastian Lague\nDead Pixel Studios\n\n<color=#888888><size=60><b>Software</color></size></b>\nPhotoshop\nUnity
+    Branca\nEli N/A\nMichael Thompson\nEric Fast\n\n<color=#55ff55><b><size=60>Inspirations</size></b></color>\nAidan
+    Mundell\nRonald \"Mr. Flowe\" Flowers\nDani Dev\nSebastian Lague\nDead Pixel
+    Studios\n\n<color=#888888><size=60><b>Software</color></size></b>\nPhotoshop\nUnity
     Game Engine\nBandLabs\nSoundTrap\nVisual Studio 2023/2024\nMaya 2024\nBlender\nMudBox
     2024\nTextures.com\nGitHub\n\n<size=60><b><color=#555555>External Assets</size></b></color>\nFantasy
     Skyboxes FREE\nXelu Key Prompts\n\n<color=#333333><size=60><b>Investors</color></size></b>\nZinklof.Dev\nGreyson
@@ -2797,9 +2798,17 @@ MonoBehaviour:
 
 
     <color=#ffffff>In
-    Association With
+    Association With</color>
 
-'
+
+
+
+    <size=45>For Aidan Mundell</size>
+
+    <size=30>1/11/2007
+    - 7/13/2023</size>
+
+    <size=20>Rest In Peace my brother.</size>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 101ed26a14a4570449015bfc1c446225, type: 2}
   m_sharedMaterial: {fileID: 915831401803397890, guid: 101ed26a14a4570449015bfc1c446225, type: 2}
