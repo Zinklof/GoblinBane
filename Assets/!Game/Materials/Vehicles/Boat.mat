@@ -126,7 +126,7 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.014
     - _Pixel_Displacement_Amplitude: 1.25
-    - _Pixel_Displacement_Steps: 10
+    - _Pixel_Displacement_Steps: 3
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
