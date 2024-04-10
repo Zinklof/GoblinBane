@@ -30,6 +30,7 @@ public class BuildingHealth : MonoBehaviour
                 SceneManager.LoadScene(2);
             }
 
+            OnTowerDestroyed();
             ObjectChecker.RemoveObject(transform);
             Destroy(gameObject);
         }

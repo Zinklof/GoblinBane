@@ -5,32 +5,89 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityEditor.Rendering;
 
 namespace ZinklofDev.Console
 {
     public static class Shell
     {
+        static List<string> registeredIDs = new List<string>();
         static List<object> commandList = new List<object>();
         public static bool CheatsOn = false;
 
         public static void RegisterCommand(Command command)
         {
+            for(int i = 0; i < registeredIDs.Count; i++)
+            {
+                if (command.Id != registeredIDs[i])
+                {
+                    continue;
+                }
+                else
+                {
+                    return;
+                }
+            }
             commandList.Add(command);
         }
         public static void RegisterCommand(Command<int> command)
         {
+            for (int i = 0; i < registeredIDs.Count; i++)
+            {
+                if (command.Id != registeredIDs[i])
+                {
+                    continue;
+                }
+                else
+                {
+                    return;
+                }
+            }
             commandList.Add(command);
         }
         public static void RegisterCommand(Command<byte> command)
         {
+            for (int i = 0; i < registeredIDs.Count; i++)
+            {
+                if (command.Id != registeredIDs[i])
+                {
+                    continue;
+                }
+                else
+                {
+                    return;
+                }
+            }
             commandList.Add(command);
         }
         public static void RegisterCommand(Command<bool> command)
         {
+            for (int i = 0; i < registeredIDs.Count; i++)
+            {
+                if (command.Id != registeredIDs[i])
+                {
+                    continue;
+                }
+                else
+                {
+                    return;
+                }
+            }
             commandList.Add(command);
         }
         public static void RegisterCommand(Command<float> command)
         {
+            for (int i = 0; i < registeredIDs.Count; i++)
+            {
+                if (command.Id != registeredIDs[i])
+                {
+                    continue;
+                }
+                else
+                {
+                    return;
+                }
+            }
             commandList.Add(command);
         }
 

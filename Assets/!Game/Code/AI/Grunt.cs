@@ -55,6 +55,7 @@ public class Grunt : MonoBehaviour
 
     private void killGoblin()
     {
+        buildingHealth.OnTowerDestroyed -= this.GetObjective;
         waveManager.GoblinDied();
         ObjectChecker.RemoveGoblin(gameObject);
         MoneyManager.SpendMoney(-moneyGain);
@@ -70,14 +71,15 @@ public class Grunt : MonoBehaviour
         GameObject temp = GameObject.FindGameObjectWithTag("Scriptoid");
         waveManager = temp.GetComponent<WaveManager>();
         WaveManager.WaveCleared += this.killGoblin;
+        GetObjective();
     }
 
-    private void getObjective()
+    private void GetObjective()
     {
         building = ObjectChecker.findClosestObject(transform);
 
         buildingHealth = building.GetComponent<BuildingHealth>();
-        buildingHealth.OnTowerDestroyed += this.getObjective;
+        buildingHealth.OnTowerDestroyed += this.GetObjective;
 
         agent.SetDestination(building.position);
     }

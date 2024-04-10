@@ -103,6 +103,8 @@ public class WaveManager : MonoBehaviour
         {
             armagoblinMusicManagerObject.SetActive(true);
             volume.profile = volumeProfile;
+            ArmaGoblinMusicManager temp = armagoblinMusicManagerObject.GetComponent<ArmaGoblinMusicManager>();
+            temp.ChangeToArmaGoblin();
         }
     }
 

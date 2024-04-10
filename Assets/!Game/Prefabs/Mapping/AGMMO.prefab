@@ -48,6 +48,9 @@ MonoBehaviour:
   m_AudioSource: {fileID: 522510171443244178}
   m_Clip: {fileID: 8300000, guid: 15a9726524e08ba4a9c210fd4a412d5d, type: 3}
   m_ClipLooped: {fileID: 8300000, guid: cf1b06e06645b9749976a2c865f151e7, type: 3}
+  m_ArmaGoblin: {fileID: 8300000, guid: 88a27dae13390db43af2c3c1bc9c7b57, type: 3}
+  m_ArmaGoblinLooped: {fileID: 8300000, guid: efacdf2f059827b44ae5a7b5770a9593, type: 3}
+  armaGoblin: 0
 --- !u!82 &522510171443244178
 AudioSource:
   m_ObjectHideFlags: 0

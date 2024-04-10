@@ -59,6 +59,7 @@ public class TowerCode : MonoBehaviour
                 if (MathZ.VectorDistanceSquared(transform.position, target.transform.position) < attackDistance && MathZ.VectorDistanceSquared(transform.position, target.transform.position) > minAttackDistance)
                 {
                     Attack();
+                    attackDelay = attackSpeedSeconds;
                 }
             }
         }

@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/!Game/Scenes/LevelClassic.unity
     guid: a5d4208b017abec43b182a48398662cd
+  - enabled: 1
+    path: Assets/!Game/Scenes/LevelRevamp.unity
+    guid: 3f2f91ac8f6e65c4289acb2c7f7b7a08
   m_configObjects: {}

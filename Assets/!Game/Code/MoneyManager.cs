@@ -71,6 +71,7 @@ public class MoneyManager : MonoBehaviour
 
     private void Start()
     {
+        cash = 300;
         moneyUI.text = "" + cash;
         _moneyUI = moneyUI;
     }
