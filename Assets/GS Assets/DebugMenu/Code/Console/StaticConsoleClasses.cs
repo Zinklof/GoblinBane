@@ -11,7 +11,7 @@ namespace ZinklofDev.Console
         {
             Error,
             Warning,
-            Command,
+            LegacyCommand,
             Response,
             Misc,
         }
@@ -51,11 +51,11 @@ namespace ZinklofDev.Console
         }
     }
 
-    public class Command : CommandBasic
+    public class LegacyCommand : CommandBasic
     {
         private Action command;
 
-        public Command(string id, string format, string description, bool isCheat, Action command) : base (id, format, description, isCheat)
+        public LegacyCommand(string id, string format, string description, bool isCheat, Action command) : base (id, format, description, isCheat)
         {
             this.command = command;
         }
@@ -66,11 +66,11 @@ namespace ZinklofDev.Console
         }
     }
 
-    public class Command<T1> : CommandBasic
+    public class LegacyCommand<T1> : CommandBasic
     {
         private Action<T1> command;
 
-        public Command(string id, string format, string description, bool isCheat, Action<T1> command) : base (id, format, description, isCheat)
+        public LegacyCommand(string id, string format, string description, bool isCheat, Action<T1> command) : base (id, format, description, isCheat)
         {
             this.command = command;
         }
@@ -81,11 +81,11 @@ namespace ZinklofDev.Console
         }
     }
 
-    public class Command<T1, T2> : CommandBasic
+    public class LegacyCommand<T1, T2> : CommandBasic
     {
         private Action<T1, T2> command;
 
-        public Command(string id, string format, string description, bool isCheat, Action<T1, T2> command) : base(id, format, description, isCheat)
+        public LegacyCommand(string id, string format, string description, bool isCheat, Action<T1, T2> command) : base(id, format, description, isCheat)
         {
             this.command = command;
         }
@@ -96,11 +96,11 @@ namespace ZinklofDev.Console
         }
     }
 
-    public class Command<T1, T2, T3> : CommandBasic
+    public class LegacyCommand<T1, T2, T3> : CommandBasic
     {
         private Action<T1, T2, T3> command;
 
-        public Command(string id, string format, string description, bool isCheat, Action<T1, T2, T3> command) : base(id, format, description, isCheat)
+        public LegacyCommand(string id, string format, string description, bool isCheat, Action<T1, T2, T3> command) : base(id, format, description, isCheat)
         {
             this.command = command;
         }

@@ -5,7 +5,6 @@ using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEditor.Rendering;
 
 namespace ZinklofDev.Console
 {
@@ -15,7 +14,7 @@ namespace ZinklofDev.Console
         static List<object> commandList = new List<object>();
         public static bool CheatsOn = false;
 
-        public static void RegisterCommand(Command command)
+        public static void RegisterCommand(LegacyCommand command)
         {
             for(int i = 0; i < registeredIDs.Count; i++)
             {
@@ -30,7 +29,7 @@ namespace ZinklofDev.Console
             }
             commandList.Add(command);
         }
-        public static void RegisterCommand(Command<int> command)
+        public static void RegisterCommand(LegacyCommand<int> command)
         {
             for (int i = 0; i < registeredIDs.Count; i++)
             {
@@ -45,7 +44,7 @@ namespace ZinklofDev.Console
             }
             commandList.Add(command);
         }
-        public static void RegisterCommand(Command<byte> command)
+        public static void RegisterCommand(LegacyCommand<byte> command)
         {
             for (int i = 0; i < registeredIDs.Count; i++)
             {
@@ -60,7 +59,7 @@ namespace ZinklofDev.Console
             }
             commandList.Add(command);
         }
-        public static void RegisterCommand(Command<bool> command)
+        public static void RegisterCommand(LegacyCommand<bool> command)
         {
             for (int i = 0; i < registeredIDs.Count; i++)
             {
@@ -75,7 +74,7 @@ namespace ZinklofDev.Console
             }
             commandList.Add(command);
         }
-        public static void RegisterCommand(Command<float> command)
+        public static void RegisterCommand(LegacyCommand<float> command)
         {
             for (int i = 0; i < registeredIDs.Count; i++)
             {
@@ -109,29 +108,29 @@ namespace ZinklofDev.Console
 
                 if (alteredInput[0] == commandBasic.Format)
                 {
-                    if (commandList[i] as Command != null)
+                    if (commandList[i] as LegacyCommand != null)
                     {
-                        (commandList[i] as Command).Invoke();
+                        (commandList[i] as LegacyCommand).Invoke();
                         return;
                     }
-                    else if (commandList[i] as Command<byte> != null)
+                    else if (commandList[i] as LegacyCommand<byte> != null)
                     {
-                        (commandList[i] as Command<byte>).invoke(byte.Parse(alteredInput[1]));
+                        (commandList[i] as LegacyCommand<byte>).invoke(byte.Parse(alteredInput[1]));
                         return;
                     }
-                    else if (commandList[i] as Command<bool> != null)
+                    else if (commandList[i] as LegacyCommand<bool> != null)
                     {
-                        (commandList[i] as Command<bool>).invoke(bool.Parse(alteredInput[1]));
+                        (commandList[i] as LegacyCommand<bool>).invoke(bool.Parse(alteredInput[1]));
                         return;
                     }
-                    else if (commandList[i] as Command<int> != null)
+                    else if (commandList[i] as LegacyCommand<int> != null)
                     {
-                        (commandList[i] as Command<int>).invoke(int.Parse(alteredInput[1]));
+                        (commandList[i] as LegacyCommand<int>).invoke(int.Parse(alteredInput[1]));
                         return;
                     }
-                    else if (commandList[i] as Command<float> != null)
+                    else if (commandList[i] as LegacyCommand<float> != null)
                     {
-                        (commandList[i] as Command<float>).invoke(float.Parse(alteredInput[1]));
+                        (commandList[i] as LegacyCommand<float>).invoke(float.Parse(alteredInput[1]));
                         return;
                     }
                     else

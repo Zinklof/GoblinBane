@@ -18,7 +18,8 @@ Material:
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
-  disabledShaderPasses: []
+  disabledShaderPasses:
+  - MOTIONVECTORS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -76,6 +77,10 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxOcclusionMapping_89b7e920bdb94038b045153e5867e0b3_Heightmap_2:
+        m_Texture: {fileID: 2800000, guid: 3fb9f0f2f8675c244956cc20cc2be014, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxOcclusionMapping_89b7e920bdb94038b045153e5867e0b3_Heightmap_2_Texture2D:
         m_Texture: {fileID: 2800000, guid: 3fb9f0f2f8675c244956cc20cc2be014, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -154,6 +159,7 @@ Material:
     - _Tiling: {r: 1200, g: 1200, b: 0, a: 0}
     - _Wave_Tiling: {r: 5, g: 5, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!114 &5435742421935680722
 MonoBehaviour:
   m_ObjectHideFlags: 11
@@ -166,4 +172,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 6
+  version: 9
