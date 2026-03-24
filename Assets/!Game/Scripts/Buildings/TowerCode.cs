@@ -19,8 +19,8 @@ public class TowerCode : MonoBehaviour
     private void Awake()
     {
         target = ObjectChecker.findClosestGoblin(transform);
-        attackDistance = (float)Numbers.Cube(attackDistance);
-        minAttackDistance = (float)Numbers.Cube(minAttackDistance);
+        attackDistance = attackDistance * attackDistance;
+        minAttackDistance = minAttackDistance * minAttackDistance;
     }
 
     private void Attack()
@@ -56,7 +56,9 @@ public class TowerCode : MonoBehaviour
 
             if (target != null)
             {
-                if (Vectors.SqrDist2f(transform.position, target.transform.position) < attackDistance && Vectors.SqrDist2f(transform.position, target.transform.position) > minAttackDistance)
+                float dist = Vectors.SqrDist3f(transform.position, target.transform.position);
+            
+                if (dist < attackDistance && dist > minAttackDistance)
                 {
                     Attack();
                     attackDelay = attackSpeedSeconds;
